@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Configuración - SIMI</title>
+  <link rel="stylesheet" href="css/style_configuracion.css" />
+</head>
+<body>
+  <div class="config-container">
+    <header class="config-header">
+      <button id="volver" class="volver-btn" title="Volver al menú">←</button>
+      <h1 data-i18n="settingsTitle">Configuración</h1>
+    </header>
+
+    <main class="config-main">
+      <section class="config-section">
+        <h2 data-i18n="language">Idioma</h2>
+        <div class="lang-options">
+          <button onclick="setLanguage('es')" class="lang-btn">Español</button>
+          <button onclick="setLanguage('en')" class="lang-btn">English</button>
+        </div>
+      </section>
+
+      <section class="config-section">
+        <h2 data-i18n="theme">Tema</h2>
+        <button id="themeToggle" class="theme-btn" data-i18n="toggleTheme">Cambiar a modo oscuro</button>
+      </section>
+
+      <section class="config-section">
+        <h2 data-i18n="help">Ayuda</h2>
+        <p data-i18n="contactText">¿Necesitás ayuda? Contactanos en:</p>
+        <a href="#" id="instagramLink" target="_blank" class="insta-link">@tu_instagram</a>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/lang.js"></script>
+  <script>
+    applyTranslations();
+
+    // volver al menú
+    document.getElementById("volver").addEventListener("click", () => {
+      window.location.href = "index.html";
+    });
+
+    // modo claro/oscuro
+    const themeBtn = document.getElementById("themeToggle");
+    const current = localStorage.getItem("theme") || "light";
+    document.documentElement.setAttribute("data-theme", current);
+    themeBtn.textContent = current === "light" ? "Cambiar a modo oscuro" : "Switch to light mode";
+
+    themeBtn.addEventListener("click", () => {
+      const now = localStorage.getItem("theme") || "light";
+      const next = now === "light" ? "dark" : "light";
+      localStorage.setItem("theme", next);
+      document.documentElement.setAttribute("data-theme", next);
+      themeBtn.textContent = next === "light" ? "Cambiar a modo oscuro" : "Switch to light mode";
+    });
+  </script>
+</body>
+</html>
