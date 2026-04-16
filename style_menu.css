@@ -1,0 +1,94 @@
+/* === Fondo dinámico === */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #007BFF, #00C6FF, #0052D4, #00B4DB);
+  background-size: 400% 400%;
+  animation: gradientMove 8s ease infinite;
+  color: white;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.menu-container {
+  text-align: center;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+.menu-title {
+  font-size: 2.2em;
+  margin-bottom: 40px;
+  text-shadow: 0 0 8px rgba(255,255,255,0.3);
+}
+
+/* === Tarjetas del menú === */
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: nowrap;
+}
+
+.menu-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  border-radius: 20px;
+  padding: 25px;
+  width: 200px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  animation: slideUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+.menu-card i {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.menu-card h2 {
+  margin: 5px 0;
+  font-size: 1.3em;
+}
+
+.menu-card p {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+/* === Hover dinámico === */
+.menu-card:hover {
+  transform: scale(1.08);
+  background: rgba(255,255,255,0.2);
+}
+
+/* Colores de hover según tipo */
+.menu-card:nth-child(1):hover { box-shadow: 0 0 15px #00E5FF; }
+.menu-card:nth-child(2):hover { box-shadow: 0 0 15px #FFD54F; }
+.menu-card:nth-child(3):hover { box-shadow: 0 0 15px #FF4081; }
+.menu-card:nth-child(4):hover { box-shadow: 0 0 15px #9E9E9E; }
+
+/* === Animaciones === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.menu-card:nth-child(1) { animation-delay: 0.2s; }
+.menu-card:nth-child(2) { animation-delay: 0.4s; }
+.menu-card:nth-child(3) { animation-delay: 0.6s; }
+.menu-card:nth-child(4) { animation-delay: 0.8s; }
