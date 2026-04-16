@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú Principal - SIMI</title>
+  <link rel="stylesheet" href="css/style_menu.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="menu-container">
+    <h1 class="menu-title">Menú Principal</h1>
+
+    <div class="card-container">
+      <div class="menu-card" onclick="navigate('monitoreo.html')">
+        <i data-lucide="monitor"></i>
+        <h2>Monitoreo</h2>
+        <p>Visualiza el consumo eléctrico en tiempo real.</p>
+      </div>
+
+      <div class="menu-card" onclick="navigate('control.html')">
+        <i data-lucide="plug-zap"></i>
+        <h2>Control</h2>
+        <p>Gestiona los dispositivos conectados al Emson.</p>
+      </div>
+
+      <div class="menu-card" onclick="navigate('objetivos.html')">
+        <i data-lucide="target"></i>
+        <h2>Objetivos</h2>
+        <p>Compara y establece tus metas de ahorro.</p>
+      </div>
+
+      <div class="menu-card" onclick="navigate('configuracion.html')">
+        <i data-lucide="settings"></i>
+        <h2>Configuración</h2>
+        <p>Ajusta idioma, tema y conexiones del sistema.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script_menu.js"></script>
+</body>
+</html>
