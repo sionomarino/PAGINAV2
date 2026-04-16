@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Control - SIMI</title>
+  <link rel="stylesheet" href="css/style_control.css" />
+</head>
+<body>
+  <div class="control-container" id="controlContainer">
+    <header class="control-header">
+      <button id="volver" class="volver-btn" title="Volver al menú">←</button>
+      <h1>Control de Emson</h1>
+    </header>
+
+    <main class="control-main">
+      <div class="devices-row" id="devicesRow" aria-live="polite"></div>
+
+      <div class="empty-state" id="emptyState">
+        <p>No hay dispositivos guardados. <br>Agregá tu Emson para controlarlo remotamente.</p>
+        <button id="addFirstBtn" class="primary">Agregar Emson</button>
+      </div>
+    </main>
+
+    <button id="addBtn" class="fab" title="Agregar dispositivo">➕</button>
+  </div>
+
+  <!-- Modal: agregar / editar dispositivo -->
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <h2 id="modalTitle">Agregar Emson</h2>
+      <form id="deviceForm">
+        <label>Nombre
+          <input type="text" id="deviceName" placeholder="Ej: Living - Lámpara" required />
+        </label>
+        <label>IP (ej. 192.168.1.115)
+          <input type="text" id="deviceIP" placeholder="http://192.168.1.115" required />
+        </label>
+        <div class="modal-actions">
+          <button type="button" id="cancelBtn" class="btn">Cancelar</button>
+          <button type="submit" class="btn primary">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/script_control.js"></script>
+</body>
+</html>
