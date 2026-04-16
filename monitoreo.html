@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monitoreo SIMI</title>
+  <link rel="stylesheet" href="css/style_monitoreo.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="monitoreo-container">
+    <header class="monitoreo-header">
+      <button id="volver" class="volver-btn" title="Volver al inicio">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15 18l-6-6 6-6" />
+        </svg>
+      </button>
+      <h1>Monitoreo SIMI</h1>
+    </header>
+
+    <main class="datos-panel">
+      <div class="dato"><h3>Voltaje</h3><p><span id="voltaje">--</span> V</p></div>
+      <div class="dato"><h3>Corriente</h3><p><span id="corriente">--</span> A</p></div>
+      <div class="dato"><h3>Potencia</h3><p><span id="potencia">--</span> W</p></div>
+      <div class="dato"><h3>Energía</h3><p><span id="energia">--</span> kWh</p></div>
+      <div class="dato"><h3>Costo</h3><p>$<span id="costo">--</span></p></div>
+    </main>
+
+    <section class="grafico-container">
+      <canvas id="graficoEnergia"></canvas>
+    </section>
+  </div>
+
+  <script src="js/script_monitoreo.js"></script>
+</body>
+</html>
