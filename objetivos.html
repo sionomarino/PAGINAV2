@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Objetivos - SIMI</title>
+  <link rel="stylesheet" href="css/style_objetivos.css" />
+</head>
+<body>
+  <div class="objetivos-container" id="objetivosContainer">
+    <header class="obj-header">
+      <button id="volver" class="volver-btn" title="Volver al menú">←</button>
+      <h1>Objetivos de Ahorro</h1>
+    </header>
+
+    <main class="obj-main">
+      <section class="controls-row">
+        <button id="btnNuevo" class="btn primary">+ Nuevo objetivo</button>
+      </section>
+
+      <section class="listado" id="listadoObjetivos" aria-live="polite">
+        <!-- objetivos se renderizan aquí -->
+      </section>
+
+      <div id="empty" class="empty">
+        <p>No hay objetivos. Creá uno para empezar a seguir tu ahorro mensual.</p>
+      </div>
+    </main>
+  </div>
+
+  <!-- Burbujas decorativas -->
+  <div class="bubbles" aria-hidden="true">
+    <div class="bubble b1"></div>
+    <div class="bubble b2"></div>
+    <div class="bubble b3"></div>
+    <div class="bubble b4"></div>
+    <div class="bubble b5"></div>
+  </div>
+
+  <!-- Modal objetivo -->
+  <div class="modal-backdrop" id="modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <h2 id="modalTitle">Nuevo objetivo</h2>
+      <form id="formObjetivo">
+        <label>Mes y año
+          <input id="inputMes" type="month" required />
+        </label>
+
+        <label>Monto objetivo (en $)
+          <input id="inputMonto" type="number" min="1" step="0.01" required placeholder="50000" />
+        </label>
+
+        <div class="modal-actions">
+          <button type="button" id="cancelModal" class="btn">Cancelar</button>
+          <button type="submit" class="btn primary">Guardar objetivo</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal avance -->
+  <div class="modal-backdrop" id="modalAvance" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalAvanceTitle">
+      <h2 id="modalAvanceTitle">Agregar avance</h2>
+      <form id="formAvance">
+        <label>Monto ahorrado (en $)
+          <input id="inputAvance" type="number" min="0.01" step="0.01" required placeholder="1000" />
+        </label>
+
+        <div class="modal-actions">
+          <button type="button" id="cancelAvance" class="btn">Cancelar</button>
+          <button type="submit" class="btn primary">Agregar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/script_objetivos.js"></script>
+</body>
+</html>
